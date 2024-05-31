@@ -36,8 +36,8 @@ __folding_prompt() {
 }
 
 precmd() {
-    PROMPT_PRE_DIR='%(?.%F{green}%?.%F{red}%?)%f %B%F{blue}%n@%m%F{black}%b:%F{cyan}'
-    PROMPT_POST_DIR='%f %# '
+    PROMPT_PRE_DIR='%(?.%F{green}%?.%F{red}%?)%f %B%F{blue}%n@%m%F{black}:%F{cyan}'
+    PROMPT_POST_DIR='%b%f %# '
     export PROMPT="$(__virtualenv)${PROMPT_PRE_DIR}$(__folding_prompt)${PROMPT_POST_DIR}"
     if [[ $INSIDE_EMACS = 'vterm' ]]; then
         export PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
